@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "26713CACD0D0007AB337E648F8C2CE8B7229DB5A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "26713CACD0D0007AB337E648F8C2CE8B7229DB5A" : 9223372036854775807,
+    "DE4B865F96928A6089647FD9CB43EA044CDF0B12" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FE17D868-9085-4FF3-A37D-783772EC9454",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "26713CACD0D0007AB337E648F8C2CE8B7229DB5A" : "librarySKC\/",
+    "DE4B865F96928A6089647FD9CB43EA044CDF0B12" : "..\/..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LibrarySKC",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LibrarySKC\/LibrarySKC.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sean-crowl\/librarySKC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "26713CACD0D0007AB337E648F8C2CE8B7229DB5A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/IzaakPrats\/teky1-swift151.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DE4B865F96928A6089647FD9CB43EA044CDF0B12"
+    }
+  ]
+}
