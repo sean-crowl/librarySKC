@@ -35,14 +35,36 @@ class Interactive {
             case "Add":
                 io.writeMessage("\nWhat book would you like to add?")
                 currentInput = io.getInput()
+                if library.contains(currentInput) {
+                    print("\nThis book is already in the library!\n")
+                } else {
                 library.insert(currentInput)
                 libraryCurrent.insert(currentInput)
                 print("\nYou have added the book \(currentInput) to the library!\n")
+                }
             case "CheckOut":
                 io.writeMessage("\nWhat book would you like to check out?")
                 currentInput = io.getInput()
+                if libraryCurrent.contains(currentInput) {
+                    print("\nYou have checked out \(currentInput)!\n")
                 libraryCurrent.remove(currentInput)
                 libraryOut.insert(currentInput)
+                } else {
+                    print("\nUnfortunately, this book is already checked out!\n")
+                }
+                case "CheckIn":
+                io.writeMessage("\nWhat book would you like to check in?")
+                currentInput = io.getInput()
+                if libraryOut.contains(currentInput) {
+                    print("\nYou have checked in \(currentInput)! Thank you!\n")
+                    libraryCurrent.insert(currentInput)
+                    libraryOut.remove(currentInput)
+                } else {
+                    print("\nThis book is not checked out!\n")
+                }
+            case "Quit":
+                print("Thank you for using Library Mach 5!")
+                done = true
             default:
                 print("\nPlease choose an action!\n")
             }
