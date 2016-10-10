@@ -13,13 +13,13 @@ class Interactive {
     private var currentInput: String = ""
     private var io = Io()
     
-    var library:[String:String] = ["Book 1":"Checked In", "Book 2":"Checked In", "Book 3":"Checked In", "Book 4":"Checked In", "Book 5":"Checked In"]
-    var libraryCurrent:[String:String] = ["Book 1":"Checked In", "Book 2":"Checked In", "Book 3":"Checked In", "Book 4":"Checked In", "Book 5":"Checked In"]
-    var libraryOut:[String:String] = [:]
+    var library:[String] = ["Book 1", "Book 2", "Book 3", "Book 4", "Book 5"]
+    var libraryCurrent:[String] = ["Book 1", "Book 2", "Book 3", "Book 4", "Book 5"]
+    var libraryOut:[String] = [String]()
     
     var date = Date()
     var dueDate = Date(timeIntervalSinceNow: 604800)
-
+    
     
     func go() {
         while !done {
@@ -40,30 +40,38 @@ class Interactive {
             case "Add":
                 io.writeMessage("\nWhat book would you like to add?")
                 currentInput = io.getInput()
-                if library.keys.contains(currentInput) {
+                if library.contains(currentInput) {
                     print("\nThis book is already in the library!\n")
                 } else {
-                library[currentInput] = "Checked In"
-                library[currentInput] = "Checked In"
+                library.append(currentInput)
+                libraryCurrent.append(currentInput)
                 print("\nYou have added the book \(currentInput) to the library!\n")
                 }
             case "CheckOut":
                 io.writeMessage("\nWhat book would you like to check out?")
                 currentInput = io.getInput()
-                if libraryCurrent.keys.contains(currentInput) {
+                if libraryCurrent.contains(currentInput) {
                     print("\nYou have checked out \(currentInput)!\n")
-                    libraryCurrent.removeValue(forKey: currentInput)
-                libraryOut[currentInput] = "Due Back: \(dueDate)"
+                    while libraryCurrent.contains(currentInput) {
+                        if let currentInputIndex = libraryCurrent.index(of: currentInput) {
+                            libraryCurrent.remove(at: currentInputIndex)
+                        }
+                    }
+                libraryOut.append("\(currentInput), Due Back: \(dueDate)")
                 } else {
                     print("\nUnfortunately, this book is already checked out!\n")
                 }
                 case "CheckIn":
                 io.writeMessage("\nWhat book would you like to check in?")
                 currentInput = io.getInput()
-                if libraryOut.keys.contains(currentInput) {
+                if libraryOut.contains(currentInput) {
                     print("\nYou have checked in \(currentInput)! Thank you!\n")
-                    libraryCurrent[currentInput] = "Last Checked In: \(date)"
-                    libraryOut.removeValue(forKey: currentInput)
+                    libraryCurrent.append("\(currentInput), Last Checked in: \(date)")
+                    while libraryCurrent.contains(currentInput) {
+                        if let currentInputIndex = libraryCurrent.index(of: currentInput) {
+                            libraryCurrent.remove(at: currentInputIndex)
+                        }
+                    }
                 } else {
                     print("\nThis book is not checked out!\n")
                 }
