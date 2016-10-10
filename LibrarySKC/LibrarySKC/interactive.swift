@@ -13,21 +13,38 @@ class Interactive {
     private var currentInput: String = ""
     private var io = Io()
     
-    var library:[String] = ["Book 1", "Book 2", "Book 3", "Book 4", "Book 5"]
+    var library:Set<String> = ["Book 1", "Book 2", "Book 3", "Book 4", "Book 5"]
+    var libraryCurrent:Set<String> = ["Book 1", "Book 2", "Book 3", "Book 4", "Book 5"]
+    var libraryOut:Set<String> = []
     
     func go() {
         while !done {
             
             io.writeMessage("\nWelcome to Library Mach 5! Type 'Help' to see a list of actions that you can do! Otherwise, input an action!")
             currentInput = io.getInput()
-            var selection = currentInput
+            let selection = currentInput
             switch selection {
             case "Help":
-                print("\nHere is a list of available actions for the library: \n\nList: Lists the books currently in the library. \nAdd: Adds a new book to the library. \nCheckIn: Checks a book back into the library. \nCheckOut: Checks a book out of the library. \nHelp: Brings up this help menu. \nQuit: Quits the library program. \n")
+                print("\nHere is a list of available actions for the library: \n\nList: Lists the books currently existing in the library. \nListAvailable: Lists the books current available to be checked out. \nListCheckedOut: Lists the books currently checked out of the library. \nAdd: Adds a new book to the library. \nCheckIn: Checks a book back into the library. \nCheckOut: Checks a book out of the library. \nHelp: Brings up this help menu. \nQuit: Quits the library program. \n")
             case "List":
-                print("\nThe books currently in the library are: \(library) \n")
+                print("\nThe books in the library are: \(library) \n")
+            case "ListAvailable":
+                print("\nThe books currently available for check out in the library are: \(libraryCurrent) \n")
+            case "ListCheckedOut":
+                print("\nThe books currently checked out of the library are: \(libraryOut) \n")
+            case "Add":
+                io.writeMessage("\nWhat book would you like to add?")
+                currentInput = io.getInput()
+                library.insert(currentInput)
+                libraryCurrent.insert(currentInput)
+                print("\nYou have added the book \(currentInput) to the library!\n")
+            case "CheckOut":
+                io.writeMessage("\nWhat book would you like to check out?")
+                currentInput = io.getInput()
+                libraryCurrent.remove(currentInput)
+                libraryOut.insert(currentInput)
             default:
-                print("\nPlease choose an action!")
+                print("\nPlease choose an action!\n")
             }
         }
     }
