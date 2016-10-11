@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E3948D61DAD7556003ECE0D /* library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3948D51DAD7556003ECE0D /* library.swift */; };
+		2E3948D81DAD7561003ECE0D /* book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3948D71DAD7561003ECE0D /* book.swift */; };
 		2EABB5731DAC157B001F3A85 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABB5721DAC157B001F3A85 /* main.swift */; };
 		2EABB57A1DAC15A0001F3A85 /* io.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABB5791DAC15A0001F3A85 /* io.swift */; };
 		2EABB57C1DAC15AC001F3A85 /* interactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABB57B1DAC15AC001F3A85 /* interactive.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E3948D51DAD7556003ECE0D /* library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = library.swift; sourceTree = "<group>"; };
+		2E3948D71DAD7561003ECE0D /* book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = book.swift; sourceTree = "<group>"; };
 		2EABB56F1DAC157B001F3A85 /* LibrarySKC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LibrarySKC; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EABB5721DAC157B001F3A85 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2EABB5791DAC15A0001F3A85 /* io.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = io.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 				2EABB5721DAC157B001F3A85 /* main.swift */,
 				2EABB5791DAC15A0001F3A85 /* io.swift */,
 				2EABB57B1DAC15AC001F3A85 /* interactive.swift */,
+				2E3948D51DAD7556003ECE0D /* library.swift */,
+				2E3948D71DAD7561003ECE0D /* book.swift */,
 			);
 			path = LibrarySKC;
 			sourceTree = "<group>";
@@ -126,7 +132,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E3948D81DAD7561003ECE0D /* book.swift in Sources */,
 				2EABB5731DAC157B001F3A85 /* main.swift in Sources */,
+				2E3948D61DAD7556003ECE0D /* library.swift in Sources */,
 				2EABB57C1DAC15AC001F3A85 /* interactive.swift in Sources */,
 				2EABB57A1DAC15A0001F3A85 /* io.swift in Sources */,
 			);
@@ -258,6 +266,7 @@
 				2EABB5781DAC157B001F3A85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
