@@ -51,7 +51,7 @@ class Interactive {
                 io.writeMessage("\nWhat book would you like to check out?")
                 currentInput = io.getInput()
                 if libraryCurrent.keys.contains(currentInput) {
-                print("\nYou have checked out \(currentInput)!\n")
+                print("\nYou have checked out \(currentInput)! Is is due back on \(dueDate).\n")
                 libraryCurrent.removeValue(forKey: currentInput)
                 libraryOut[currentInput] = "Due Back: \(dueDate)"
                 } else {
