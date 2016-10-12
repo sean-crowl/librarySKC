@@ -27,12 +27,20 @@ class Interactive {
             case "q":
                 done = true
             case "List":
-                let sortedAll = lib.library.keys.sorted()
-                print("\nThe books in the library are: \(sortedAll) \n")
+                let sortedAll = lib.library.keys.sorted().joined(separator: "\n")
+                print("\nThe books in the library are:\n\(sortedAll) \n")
             case "ListAvailable":
-                print("\nThe books currently available for check out in the library are: \(lib.libraryCurrent) \n")
+                let libCurrentSort = lib.libraryCurrent
+                    .sorted { $0.0 < $1.0 }
+                    .map { $0 + " : " + $1 }
+                    .joined(separator: "\n")
+                print("\nThe books currently available for check out in the library are:\n\(libCurrentSort) \n")
             case "ListCheckedOut":
-                print("\nThe books currently checked out of the library are: \(lib.libraryOut) \n")
+                let libOutSort = lib.libraryOut
+                    .sorted { $0.0 < $1.0 }
+                    .map { $0 + " : " + $1 }
+                    .joined(separator: "\n")
+                print("\nThe books currently checked out of the library are:\n\(libOutSort) \n")
             case "Add":
                 lib.addBook()
             case "CheckOut":

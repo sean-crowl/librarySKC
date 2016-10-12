@@ -15,8 +15,16 @@ class Library {
     let date = Date()
     let dueDate = Date(timeIntervalSinceNow: 604800)
     
-    var library:[String:String] = ["Hop On Pop - by Dr. Seuss":"Checked In", "Jurassic Park - by Michael Crichton":"Checked In", "The Great Gatsby - by F. Scott Fitzgerald":"Checked In", "A Tale of Two Cities - by Charles Dickens":"Checked In", "Friday Night Lights - by H. G. Bissinger":"Checked In"]
-    var libraryCurrent:[String:String] = ["A Tale of Two Cities":"Checked In", "Friday Night Lights":"Checked In", "Hop On Pop":"Checked In", "Jurassic Park":"Checked In", "The Great Gatsby":"Checked In"]
+    var library:[String:String] = ["Hop On Pop - by Dr. Seuss":"Checked In",
+                                   "Jurassic Park - by Michael Crichton":"Checked In",
+                                   "The Great Gatsby - by F. Scott Fitzgerald":"Checked In",
+                                   "A Tale of Two Cities - by Charles Dickens":"Checked In",
+                                   "Friday Night Lights - by H. G. Bissinger":"Checked In"]
+    var libraryCurrent:[String:String] = ["A Tale of Two Cities":"Checked In",
+                                          "Friday Night Lights":"Checked In",
+                                          "Hop On Pop":"Checked In",
+                                          "Jurassic Park":"Checked In",
+                                          "The Great Gatsby":"Checked In"]
     var libraryOut:[String:String] = [:]
     
     
