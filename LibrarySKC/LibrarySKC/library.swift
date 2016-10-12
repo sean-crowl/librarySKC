@@ -12,13 +12,13 @@ class Library {
     private var done: Bool = false
     private var currentInput: String = ""
     private var io = Io()
+    let date = Date()
+    let dueDate = Date(timeIntervalSinceNow: 604800)
     
-    var library:[String:String] = ["Hop On Pop":"Checked In", "BBook":"Checked In", "CBook":"Checked In", "DBook":"Checked In", "EBook":"Checked In"]
-    var libraryCurrent:[String:String] = ["Hop On Pop":"Checked In", "BBook":"Checked In", "CBook":"Checked In", "DBook":"Checked In", "EBook":"Checked In"]
+    var library:[String:String] = ["Hop On Pop - by Dr. Seuss":"Checked In", "Jurassic Park - by Michael Crichton":"Checked In", "The Great Gatsby - by F. Scott Fitzgerald":"Checked In", "A Tale of Two Cities - by Charles Dickens":"Checked In", "Friday Night Lights - by H. G. Bissinger":"Checked In"]
+    var libraryCurrent:[String:String] = ["A Tale of Two Cities":"Checked In", "Friday Night Lights":"Checked In", "Hop On Pop":"Checked In", "Jurassic Park":"Checked In", "The Great Gatsby":"Checked In"]
     var libraryOut:[String:String] = [:]
     
-    var date = Date()
-    var dueDate = Date(timeIntervalSinceNow: 604800)
     
     func checkOut() {
         io.writeMessage("\nWhat book would you like to check out?")
@@ -49,12 +49,12 @@ class Library {
     if library.keys.contains(currentInput) {
     print("\nThis book is already in the library!\n")
     } else {
-    var title = currentInput
+    let title = currentInput
     io.writeMessage("\nWho is the author?")
     currentInput = io.getInput()
     let author = currentInput
     let bookTotal = title + " - by " + author
-    libraryCurrent[bookTotal] = "Checked In"
+    libraryCurrent[title] = "Checked In"
     library[bookTotal] = "Checked In"
     print("\nYou have added the book \(bookTotal) to the library!\n")
     }

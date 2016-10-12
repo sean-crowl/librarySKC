@@ -13,7 +13,6 @@ class Interactive {
     private var currentInput: String = ""
     private var io = Io()
     private var lib = Library()
-    private var book = Book()
     
     
     func go() {
