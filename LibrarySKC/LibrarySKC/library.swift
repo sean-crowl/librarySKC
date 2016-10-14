@@ -12,8 +12,8 @@ class Library {
     private var done: Bool = false
     private var currentInput: String = ""
     private var io = Io()
-    let date = Date()
-    let dueDate = Date(timeIntervalSinceNow: 604800)
+    let date = DateFormatter.localizedString(from: Date() as Date, dateStyle: .short, timeStyle: .short)
+    let dueDate = DateFormatter.localizedString(from: Date(timeIntervalSinceNow: 604800) as Date, dateStyle: .short, timeStyle: .short)
     
     var library:[String:String] = ["Hop On Pop - by Dr. Seuss":"Checked In",
                                    "Jurassic Park - by Michael Crichton":"Checked In",
